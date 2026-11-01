@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2c2335">
+<meta name="description" content="A little something just for you. Happy birthday, Oswuy!">
+<title>Happy Birthday, Oswuy!</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#292332;color:white;font-family:Arial,sans-serif}main{position:relative;width:100%;max-width:1024px;margin:auto} .art{width:100%;height:auto;display:block}button.hotspot{position:absolute;border:0;background:transparent;color:transparent;cursor:pointer;border-radius:24px}button.hotspot:hover{box-shadow:0 0 28px #ffb3dd45}button.hotspot:focus-visible{outline:2px solid #fff;outline-offset:4px;box-shadow:0 0 28px #ffb3dd}.wish{left:25%;top:47%;width:49%;height:10%}.gift{left:26%;top:81%;width:49%;height:12%}.down{left:46%;top:43.6%;width:8%;height:3.5%}dialog{background:#302438ee;color:#fff;border:1px solid #eeb6d9;border-radius:28px;padding:36px;max-width:min(90vw,440px);text-align:center;box-shadow:0 0 60px #ed8dc250}dialog::backdrop{background:#140e20b8;backdrop-filter:blur(8px)}dialog h2{font:italic 36px Georgia,serif;margin:0 0 20px;text-shadow:0 0 12px #f7a5d4}dialog p{line-height:1.6}dialog button{border:1px solid #f6c9e4;background:#573449;color:#fff;border-radius:30px;padding:12px 24px;cursor:pointer;font:inherit}.spark{position:fixed;pointer-events:none;z-index:4;color:#ffc1e1;animation:fall 2.5s ease-out forwards;font-size:22px}@keyframes fall{to{transform:translate(var(--x),55vh) rotate(180deg);opacity:0}}@media(prefers-reduced-motion:reduce){.spark{display:none}}
+</style>
+<link rel="stylesheet" href="effects.css"><link rel="stylesheet" href="refinement.css"></head>
+<body>
+<main aria-label="Birthday letter for Oswuy">
+<img class="art" src="birthday.png" width="1024" height="1536" alt="A little something just for you. Happy Birthday Oswuy! A pink and purple neon birthday card with a portrait, birthday cake, a personal letter, and a glowing gift.">
+<button class="hotspot down" aria-label="Scroll to your birthday letter"></button>
+<button class="hotspot wish" aria-label="Make a birthday wish"></button>
+<section id="letter" style="position:absolute;top:61%;left:20%;width:60%;height:19%" aria-label="A little letter for you"><p hidden>Dear Oswuy, HAPPY BIRTHDAYYY!! I hope this new chapter brings you so much happiness, unforgettable nights, amazing people, and everything your heart wishes for. You deserve all the love, laughter, and beautiful surprises life has to offer. Keep being your iconic self. The world is more fun with you in it. With love, your friend ♡</p></section>
+<button class="hotspot gift" aria-label="Open your birthday surprise"></button>
+</main>
+<dialog id="message" aria-labelledby="heading"><h2 id="heading"></h2><p id="copy"></p><form method="dialog"><button>With love ♡</button></form></dialog>
+<script>
+const modal=document.querySelector('dialog');
+function celebrate(title,copy){document.querySelector('#heading').textContent=title;document.querySelector('#copy').textContent=copy;modal.showModal();for(let i=0;i<35;i++){const s=document.createElement('span');s.className='spark';s.textContent=['✦','♡','✧'][i%3];s.style.cssText=`left:${Math.random()*100}vw;top:${Math.random()*45}vh;--x:${Math.random()*200-100}px;animation-delay:${Math.random()*.5}s`;document.body.append(s);setTimeout(()=>s.remove(),3200)}}
+document.querySelector('.wish').onclick=()=>celebrate('Make a Wish ♡','Close your eyes, make a wish, and blow out the candles. Here’s to a beautiful new chapter, Oswuy!');
+document.querySelector('.gift').onclick=()=>celebrate('Here’s to You, Oswuy!','You deserve all the love, laughter, and beautiful surprises life has to offer. Keep being your iconic self. Happy birthday! ♡');
+document.querySelector('.down').onclick=()=>document.querySelector('#letter').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'center'});
+modal.addEventListener('click',e=>{if(e.target===modal){const r=modal.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)modal.close()}});
+</script>
+<script src="gift-card.js"></script><script src="effects.js"></script></body></html>
+
+
+

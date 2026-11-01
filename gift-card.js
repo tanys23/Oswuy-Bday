@@ -1,0 +1,1 @@
+window.BIRTHDAY_GIFT = { image: "starbucks-card.png", url: "https://starbucks.cashstar.com/recipient-experience/redemption/hFyh44l5bOSy40Tv5JjvIz065/4333980c47974bcf829613049c6f54a2/?continue=true" };
